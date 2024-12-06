@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Task Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Task Tracker</h1>
+            <nav>
+                <a href="{{ url_for('index') }}">All Tasks</a>
+                <a href="{{ url_for('filter_tasks', status='Pending') }}">Pending</a>
+                <a href="{{ url_for('filter_tasks', status='Completed') }}">Completed</a>
+                <a href="{{ url_for('about') }}">About</a>
+            </nav>
+            
+        </header>
+        {% block content %}{% endblock %}
+        <footer>
+            <p>&copy; {{ 2024 }} Task Tracker ❤️</p>
+        </footer>
+    </div>
+</body>
+</html>

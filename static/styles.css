@@ -1,0 +1,235 @@
+/* Root Variables for Colors and Reusability */
+:root {
+    --primary-color: #007BFF;
+    --primary-hover-color: #0056b3;
+    --danger-color: #FF6347;
+    --danger-hover-color: #CC0000;
+    --background-color: rgba(255, 255, 255, 0.9);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --font-family: 'Arial', sans-serif;
+    --line-height: 1.6;
+    --base-padding: 20px;
+}
+
+/* Universal Reset */
+body, h1, h2, h3, p, ul, ol, li, table, th, td {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Global Settings */
+body {
+    font-family: var(--font-family);
+    background: url('https://source.unsplash.com/1600x900/?nature,abstract') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: var(--line-height);
+}
+
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: var(--base-padding);
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    color: var(--primary-hover-color);
+    transform: scale(1.05);
+}
+
+/* Section Styling */
+section {
+    margin: 20px 0;
+    padding: var(--base-padding);
+    background-color: rgba(240, 248, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s;
+}
+
+section:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+section ul li {
+    margin: 8px 0;
+}
+
+/* Form Styling */
+form {
+    margin: 20px 0;
+    display: grid;
+    gap: 15px;
+}
+
+form input, form select, form textarea, form button {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+    background-color: var(--primary-hover-color);
+    transform: scale(1.03);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table td a {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+table td a:hover {
+    background-color: var(--primary-hover-color);
+    transform: scale(1.05);
+}
+
+table td a.delete {
+    background-color: var(--danger-color);
+}
+
+table td a.delete:hover {
+    background-color: var(--danger-hover-color);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--primary-hover-color);
+}
+
+/* Advanced Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+}
